@@ -20,6 +20,25 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="page-viewport">
+            <div class="page-header">
+                <div class="page-wrapper">
+                    <div class="page-header-row">
+                        {% include '_nav_top.html.twig' %}
+                    </div>
+                </div>
+            </div>
+            <div class="page-main">
+                <div class="page-wrapper">
+                    <div class="page-main-row">
+                        <div class="main-col">
+                            {% block body %}{% endblock %}
+                        </div>
+                        {# <div class="aside-col"></div> #}
+                    </div>
+                </div>
+            </div>
+            {# <div class="page-footer"></div> #}
+        </div>
     </body>
 </html>

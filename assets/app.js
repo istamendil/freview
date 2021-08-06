@@ -2,7 +2,7 @@
 import './styles/app.scss';
 
 const $ = require('jquery');
-//require('bootstrap');
+require('bootstrap/js/dist/collapse');
 
 // start the Stimulus application
 // import './bootstrap';
