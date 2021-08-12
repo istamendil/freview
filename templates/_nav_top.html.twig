@@ -15,6 +15,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('second') }}">Second page</a>
                 </li>
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('profile') }}">Profile</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('secret_admin') }}">Secret Admin Page</a>
+                    </li>
+                {% endif %}
+                {% if not is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_register') }}">Register</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ logout_url() }}">Logout</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
